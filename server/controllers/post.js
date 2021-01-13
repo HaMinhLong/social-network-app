@@ -50,6 +50,7 @@ const deletePost = async (req, res) => {
   res.json({ message: "Post deleted successfully." });
 };
 
+
 const likePost = async (req, res) => {
   const { id } = req.params;
 
@@ -65,3 +66,4 @@ const likePost = async (req, res) => {
   res.json(updatePost);
 };
 module.exports = { fetchPosts, createPost, updatePost, deletePost, likePost };
+

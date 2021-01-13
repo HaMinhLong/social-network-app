@@ -4,7 +4,9 @@ const {
   createPost,
   deletePost,
   updatePost,
+
   likePost,
+
 } = require("../controllers/post");
 
 const router = express.Router();
