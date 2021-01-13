@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import moment from "moment";
 
+import { deletePost } from "../../../redux/Post/postActions";
+import { useDispatch } from "react-redux";
+
+
 const Post = (props) => {
   const [checkText, setCheckText] = useState(false);
   const [checkSelectButton, setCheckSelectButton] = useState(false);
+
+
+  const dispatch = useDispatch();
+
+
   return (
     <div className="post">
       <div className="creator">
@@ -23,7 +32,9 @@ const Post = (props) => {
           {checkSelectButton && (
             <div id="select-box">
               <p onClick={() => props.openModal(props.post)}>Update</p>
-              <p>Delete</p>
+
+              <p onClick={() => dispatch(deletePost(props.post._id))}>Delete</p>
+
             </div>
           )}
         </div>
