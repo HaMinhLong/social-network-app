@@ -24,3 +24,31 @@ export const createPost = (newPost) => async (dispatch) => {
     console.log("Error Create Post " + err.message);
   }
 };
+
+export const updatePosts = (id, post) => async (dispatch) => {
+  try {
+    const { data } = await api.updatePost(id, post);
+
+    dispatch({ type: actions.UPDATE_POST, payload: data });
+  } catch (error) {
+    console.log("Error Update Post: " + error.message);
+  }
+};
+
+export const deletePost = (id) => async (dispatch) => {
+  try {
+    await await api.deletePost(id);
+
+    dispatch({ type: actions.DELETE_POST, payload: id });
+  } catch (error) {
+    console.log("Error Delete Post: " + error.message);
+  }
+};
+export const likePost = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.likePost(id);
+    dispatch({ type: actions.LIKE_POST, payload: data });
+  } catch (error) {
+    console.log("Error Like Post: " + error.message);
+  }
+};
