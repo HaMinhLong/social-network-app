@@ -12,6 +12,7 @@ export const postReducer = (posts = [], action) => {
       return posts.map((post) =>
         post._id === action.payload._id ? action.payload : post
       );
+
     case actions.DELETE_POST:
       return posts.filter((post) => post._id !== action.payload);
 
