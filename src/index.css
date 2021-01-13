@@ -130,12 +130,13 @@ header a {
   position: absolute;
   font-size: 11px;
   font-style: italic;
+
   color: gray;
   top: 30px;
   left: 45px;
 }
 #tags {
-  color: gray;
+  color: darkcyan;
   font-style: italic;
   font-size: 12px;
   font-weight: 500;
@@ -292,6 +293,21 @@ header a {
   cursor: pointer;
 }
 
+/* LIKE POST */
+.like-post {
+  padding: 0px 20px;
+}
+.like-post ul {
+  display: flex;
+}
+.like-post li {
+  list-style: none;
+  font-size: 25px;
+  padding: 0px 20px 0px 0px;
+}
+.like-post p {
+  font-weight: 600;
+}
 /* ADD NEW POST  */
 .add-new-post {
   display: flex;

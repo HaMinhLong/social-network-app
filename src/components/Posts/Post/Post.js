@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import moment from "moment";
 
-import { deletePost } from "../../../redux/Post/postActions";
+import { deletePost, likePost } from "../../../redux/Post/postActions";
 import { useDispatch } from "react-redux";
-
 
 const Post = (props) => {
   const [checkText, setCheckText] = useState(false);
@@ -11,7 +10,6 @@ const Post = (props) => {
 
 
   const dispatch = useDispatch();
-
 
   return (
     <div className="post">
@@ -41,6 +39,20 @@ const Post = (props) => {
       </div>
       <div className="post-details">
         <img src={props.post.image} alt={props.post.title} />
+        <div className="like-post">
+          <ul>
+            <li>
+              <i
+                className="far fa-heart"
+                onClick={() => dispatch(likePost(props.post._id))}
+              ></i>
+            </li>
+            <li>
+              <i class="far fa-comment-alt"></i>
+            </li>
+          </ul>
+          <p> {props.post.likeCount} likes</p>
+        </div>
         <div className="content">
           <p>
             <span>
